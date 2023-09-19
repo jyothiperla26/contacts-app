@@ -3,14 +3,14 @@
 import React from 'react';
 import {
   SafeAreaView,
-  Text,
 } from 'react-native';
+import Header from './Header';
 
 function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-      <Text>Sign-in User</Text>
+      <Header />
     </SafeAreaView>
   );
 }
