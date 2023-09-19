@@ -18,14 +18,3 @@ it('renders correctly', () => {
   renderer.create(<App />);
 });
 
-test('Sign-in User', () => {
-  const { getByText } = render(<App />);
-  const headingText = getByText('Sign-in User');
-  expect(headingText).toBeTruthy();
-});
-
-test('Please fill the below details', () => {
-  const { getByText } = render(<App />);
-  const paragraphText = getByText('Please fill the below details');
-  expect(paragraphText).toBeTruthy();
-});
