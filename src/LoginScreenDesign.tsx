@@ -9,7 +9,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
-import {AsyncStorage} from 'react-native';
+// import {AsyncStorage} from 'react-native';
+import EncryptedStorage from 'react-native-encrypted-storage';
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
 
@@ -45,7 +46,11 @@ function LoginScreen({ navigation }: { navigation: any }) {
         <View style={styles.buttonContainer}>
           <View
             style={[styles.btnElement, styles.loginButton]}>
-            <Button title='Login'></Button>
+            <Button 
+            title='Login'
+            onPress={() =>
+              navigation.navigate('Home')
+            }></Button>
           </View>
           <View
             style={[styles.btnElement, styles.forgotButton]}>
@@ -60,7 +65,15 @@ function LoginScreen({ navigation }: { navigation: any }) {
       </ImageBackground>
     </View>
   );
-  
+  const storeData = async () => {
+    try {
+      await EncryptedStorage.setItem(
+        'username', JSON.stringify(username)
+      );
+    } catch (error) {
+      console.log(error)
+    }
+  };
 }
 
 const styles = StyleSheet.create({
