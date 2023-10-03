@@ -8,7 +8,8 @@ import {
   Button,
   ImageBackground,
 } from 'react-native';
-
+import ForgotPasswordScreen from './ForgotPasswordScreen';
+import {AsyncStorage} from 'react-native';
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
 
@@ -48,12 +49,18 @@ function LoginScreen({ navigation }: { navigation: any }) {
           </View>
           <View
             style={[styles.btnElement, styles.forgotButton]}>
-            <Button title="Forgot Password?"></Button>
+            <Button 
+            title="Forgot Password"
+            onPress={() =>
+              navigation.navigate('Forgot')
+            }>
+            </Button>
           </View>
         </View>
       </ImageBackground>
     </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
