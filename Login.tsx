@@ -9,7 +9,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
-const image = { uri: 'https://www.splitshire.com/wp-content/uploads/2014/11/SplitShire-03692-1800x1200-uai-1800x1012.jpg' };
+const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
 
 function LoginScreen({ navigation }: { navigation: any }) {
