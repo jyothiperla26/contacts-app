@@ -20,3 +20,9 @@ test('Should render the title of the Login screen', () => {
   const titleText = getByText('LOGIN');
   expect(titleText).toBeTruthy();
 });
+
+test('Should render the Login button text on the screen', () => {
+  const { getByText } = render(<LoginScreen navigation={undefined}/>);
+  const loginButtonText = getByText('Login');
+  expect(loginButtonText).toBeTruthy();
+});
