@@ -1,17 +1,21 @@
-/* eslint-disable prettier/prettier */
 
-import React from 'react';
-import {
-  SafeAreaView,
-} from 'react-native';
-import Header from './Header';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './Login';
 
-function App(): JSX.Element {
+const Stack = createNativeStackNavigator();
 
+const App = () => {
   return (
-    <SafeAreaView>
-      <Header />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
