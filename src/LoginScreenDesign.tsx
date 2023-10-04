@@ -7,11 +7,9 @@ import {
   TextInput,
   Button,
   ImageBackground,
-  AsyncStorage
 } from 'react-native';
-import ForgotPasswordScreen from './ForgotPasswordScreen';
-// import {AsyncStorage} from 'react-native';
-// import EncryptedStorage from 'react-native-encrypted-storage';
+import EncryptedStorage from 'react-native-encrypted-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
 
@@ -19,6 +17,20 @@ function LoginScreen({ navigation }: { navigation: any }) {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const storeData = async () => {
+    try {
+      await AsyncStorage.setItem('username', JSON.stringify(username));
+      await AsyncStorage.setItem('password', JSON.stringify(password));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleLogin = () => {
+    storeData();
+    navigation.navigate('Home');
+  };
 
 
   return (
@@ -49,9 +61,7 @@ function LoginScreen({ navigation }: { navigation: any }) {
             style={[styles.btnElement, styles.loginButton]}>
             <Button 
             title='Login'
-            onPress={() =>
-              navigation.navigate('Home')
-            }></Button>
+            onPress={handleLogin}></Button>
           </View>
           <View
             style={[styles.btnElement, styles.forgotButton]}>
