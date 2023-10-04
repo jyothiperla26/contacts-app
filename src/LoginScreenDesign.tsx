@@ -8,7 +8,6 @@ import {
   Button,
   ImageBackground,
 } from 'react-native';
-import EncryptedStorage from 'react-native-encrypted-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
@@ -59,33 +58,24 @@ function LoginScreen({ navigation }: { navigation: any }) {
         <View style={styles.buttonContainer}>
           <View
             style={[styles.btnElement, styles.loginButton]}>
-            <Button 
-            title='Login'
-            onPress={handleLogin}></Button>
+            <Button
+              title='Login'
+              onPress={handleLogin}></Button>
           </View>
           <View
             style={[styles.btnElement, styles.forgotButton]}>
-            <Button 
-            title="Forgot Password"
-            onPress={() =>
-              navigation.navigate('Forgot')
-            }>
+            <Button
+              title="Forgot Password"
+              onPress={() =>
+                navigation.navigate('Forgot')
+              }>
             </Button>
           </View>
         </View>
       </ImageBackground>
     </View>
   );
-  // const storeData = async () => {
-  //   try {
-  //     await EncryptedStorage.setItem(
-  //       'username', JSON.stringify(username)
-  //     );
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // };
-  
+
 }
 
 const styles = StyleSheet.create({
@@ -128,15 +118,15 @@ const styles = StyleSheet.create({
     color: 'white',
     borderRadius: 25,
     height: 50,
-    width:150,
+    width: 150,
     alignItems: "center",
     justifyContent: "center",
-    margin:5,
+    margin: 5,
   },
-  loginButton:{
+  loginButton: {
     backgroundColor: "#1c5c27",
   },
-  forgotButton:{
+  forgotButton: {
     backgroundColor: "#1a2e2e",
   },
   buttonContainer: {

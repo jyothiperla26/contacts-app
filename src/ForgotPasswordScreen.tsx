@@ -18,8 +18,7 @@ function ForgotPasswordScreen({ navigation }: { navigation: any }) {
                 <Text style={styles.title}>Under construction</Text>
                 <View
                     style={[styles.btnElement, styles.goBackButton]}>
-                    <Button 
-                        title='Go back'
+                    <Button title='Go back'
                         onPress={() =>
                             navigation.navigate('Login')
                         }>
