@@ -28,7 +28,9 @@ function LoginScreen({ navigation }: { navigation: any }) {
 
   const handleLogin = () => {
     storeData();
-    navigation.navigate('Home');
+    if(username!=null){
+      navigation.navigate('Home');
+    }
   };
 
 
