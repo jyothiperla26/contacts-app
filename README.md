@@ -16,6 +16,7 @@
 
 # Demo of the Contacts App
 
+
 # Features
 Implemented the following functionality:
 
