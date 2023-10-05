@@ -1,8 +1,43 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Title : Contacts App
 
-# Getting Started
+# Table of contents
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## [Description](#description)
+## [Demo](#demo)
+## [Features](#features)
+## [Installations](#installations)
+## [Usage](#usage)
+## [Conclusion](#conclusion)
+## [Contact](#contact)
+
+# Description
+
+* This is a Contacts Application. It has three screens, Login Screen, Home Screen, and Forgot Password Screen. Here, you can login into the app, and allow contacts permission and you can see your contacts list if the pwermission is granted. If you forget your password, you can click on the forgot password button.
+
+# Demo of the Contacts App
+
+# Features
+Implemented the following functionality:
+
+   - Login Screen - Designed the login screen. It will ask for username, and password of the user. After that you can click on login or forgot password buttons.
+   - Forgot Password Screen - Designed Forgot Password srceen. You can see 'Go back' button. It will navigate to Login Screen.
+   - Home Screen - Designed Home srceen. You can see your username displayed on the home screen. You can click on the Get contacts button to see your contact list. After allowing the contact permissions.
+
+# Installations
+
+* Enter the given command in the terminal to clone the repository in your local machine: 
+    ```
+    git clone https://github.com/jyothiperla26/contacts-app.git
+    ```
+
+
+* Run the given command in the terminal to install all the dependencies that are required for the project: 
+    ```
+    npm install
+    ```
+
+
+# Usage
 
 ## Step 1: Start the Metro Server
 
@@ -55,9 +90,18 @@ Now that you have successfully run the app, let's modify it.
 
    For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+#### Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
+
+# Conclusion
+
+* This is a Contacts Application. It asks for the user details in the login screen and displays the contacts list in the homw screen if user grants the CONTACTS permission. Feel free to extend and customize it according to your needs. Happy coding!
+
+# Contact
+
+* Jyothi Perla - `jyothi.perla@everest.engineering`
+* Project Link - `https://github.com/jyothiperla26/contacts-app.git`
 
 ### Now what?
 
