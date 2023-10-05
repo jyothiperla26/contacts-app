@@ -16,6 +16,11 @@
 
 # Demo of the Contacts App
 
+
+https://github.com/jyothiperla26/contacts-app/assets/136582094/94bd2fa4-9e21-4c8c-9391-f46635bdf6c6
+
+
+
 # Features
 Implemented the following functionality:
 
