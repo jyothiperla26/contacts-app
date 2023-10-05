@@ -16,6 +16,6 @@ it('renders correctly', () => {
 
 test('Should render the title of the Home Screen', () => {
   const { getByText } = render(<HomeScreen navigation={undefined}/>);
-  const titleText = getByText('Welcome Hiiii');
+  const titleText = getByText('Welcome');
   expect(titleText).toBeTruthy();
 });

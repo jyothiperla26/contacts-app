@@ -20,7 +20,6 @@ function HomeScreen({ navigation }: { navigation: any }) {
     const [username, setUsername] = useState<string | null>(null);
     const [contacts, setContacts] = useState<any | null>(null);
 
-
     useEffect(() => {
         async function getUser() {
             try {
