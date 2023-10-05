@@ -7,12 +7,9 @@ import {
     ImageBackground,
     Platform,
     FlatList,
-    ListRenderItem,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Contacts from 'react-native-contacts';
-
-PERMISSIONS.IOS.CONTACTS;
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
@@ -45,6 +42,7 @@ function HomeScreen({ navigation }: { navigation: any }) {
                 Contacts.getAll()
                 .then((contacts) => {
                     setContacts( contacts );
+                    console.log(contacts);
                 })
                 .catch((e) => {
                     console.warn("Permission to access contacts was denied");
@@ -55,7 +53,6 @@ function HomeScreen({ navigation }: { navigation: any }) {
             }
             console.log(result);
         })
-        console.log(contacts)
     }
 
     return (
@@ -77,9 +74,11 @@ function HomeScreen({ navigation }: { navigation: any }) {
                 keyExtractor={item => item.recordID}
                 data={contacts}
                 renderItem={({item})=>{
-                    <View>
-                        <Text>{`${item.company}`}</Text>
-                    </View>
+                    return (
+                        <View>
+                            <Text>{`${item.givenName}`}</Text>
+                        </View>
+                    )
                 }}/>
             </ImageBackground>
         </View>
