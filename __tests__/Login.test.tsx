@@ -13,7 +13,7 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   setItem: jest.fn(),
 }));
 
-describe('LoginScreen Component', () => {
+describe('LoginScreen', () => {
 
   test('Renders correctly the Login screen correctly', () => {
     renderer.create(<LoginScreen navigation={{ navigate: jest.fn() }}/>);

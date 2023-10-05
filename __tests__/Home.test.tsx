@@ -14,7 +14,7 @@ jest.mock('react-native-contacts', () => ({
 }));
 
 
-describe('Home screen Component', () => {
+describe('Home screen', () => {
 
   test('renders correctly', () => {
     renderer.create(<HomeScreen navigation={{}}/>);
