@@ -47,11 +47,9 @@ function HomeScreen({ navigation }: { navigation: any }) {
                 .catch((e) => {
                     console.warn("Permission to access contacts was denied");
                 });
-                console.log('Hiii');
             } else {
                 console.warn('Contacts permission denied');
             }
-            console.log(result);
         })
     }
 
