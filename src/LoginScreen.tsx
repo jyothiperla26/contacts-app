@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
@@ -9,8 +8,9 @@ import {
   ImageBackground,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { styles } from './styles/LoginScreenStyles';
+
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
-import {styles} from './styles/LoginScreenStyles';
 
 function LoginScreen({ navigation }: { navigation: any }) {
 

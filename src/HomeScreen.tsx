@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {
-    StyleSheet,
     Text,
     View,
     Button,
@@ -11,7 +10,7 @@ import {
 import {styles} from './styles/HomeScreenStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Contacts from 'react-native-contacts';
-import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
+import { request, PERMISSIONS} from 'react-native-permissions';
 
 const image = { uri: 'https://cdn.cbeditz.com/cbeditz/preview/blur-cb-editing-background-full-hd-download-for-picsart-11652345912khud9mamgd.webp' };
 
