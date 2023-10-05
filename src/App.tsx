@@ -17,7 +17,7 @@ const App = () => {
         <Stack.Screen
           name="Forgot" component={ForgotPasswordScreen} />
         <Stack.Screen
-          name="Home" component={HomeScreen} />
+          name="Home" component={HomeScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
