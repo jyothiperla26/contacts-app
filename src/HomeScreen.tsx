@@ -49,24 +49,26 @@ function HomeScreen({ navigation }: { navigation: any }) {
                         }}
                     ></Button>
                 </View>
-                <FlatList
-                style={styles.contactsContainer}
-                keyExtractor={item => item.recordID}
-                data={contacts}
-                renderItem={({item})=>{
-                    return (
-                        <View style={styles.eachContact}>
-                            <View>
-                                <Text>{`${item.givenName}`} {item.familyName}</Text>
+                {contacts !== null ? (
+                    <FlatList
+                    style={styles.contactsContainer}
+                    keyExtractor={item => item.recordID}
+                    data={contacts}
+                    renderItem={({item})=>{
+                        return (
+                            <View style={styles.eachContact}>
+                                <View>
+                                    <Text>{`${item.givenName}`} {item.familyName}</Text>
+                                </View>
+                                <View>
+                                    {item.phoneNumbers.map((phone: {number: string | number })=>(
+                                        <Text>{phone.number}</Text>
+                                    ))}
+                                </View>
                             </View>
-                            <View>
-                                {item.phoneNumbers.map((phone: {number: string | number })=>(
-                                    <Text>{phone.number}</Text>
-                                ))}
-                            </View>
-                        </View>
-                    )
-                }}/>
+                        )
+                    }}/>
+                ):(<Text></Text>)}
             </ImageBackground>
         </View>
     );
