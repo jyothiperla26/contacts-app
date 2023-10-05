@@ -1,7 +1,7 @@
 
 import React from 'react';
 import LoginScreen from '../src/LoginScreen';
-import { render, fireEvent } from '@testing-library/react-native';
+import { render, fireEvent, screen } from '@testing-library/react-native';
 
 
 // Note: import explicitly to use the types shiped with jest.
@@ -48,5 +48,12 @@ describe('LoginScreen Component', () => {
     expect(getByPlaceholderText('Username')).toBeTruthy();
     expect(getByPlaceholderText('Password')).toBeTruthy();
   });
+
+  test('Should handle the login button correctly', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }} />);
+    const loginButton = getByText('Login');
+    fireEvent.press(loginButton);
+
+})
 
 })
