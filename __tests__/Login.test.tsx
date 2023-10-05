@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import LoginScreen from '../src/LoginScreenDesign';
+import LoginScreen from '../src/LoginScreen';
 import { render } from '@testing-library/react-native';
 
 
