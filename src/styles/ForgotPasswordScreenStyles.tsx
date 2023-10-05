@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
         color: "white",
         marginBottom: 40,
     },
-    btnElement: {
+    goBackButton: {
         color: 'white',
         borderRadius: 25,
         height: 50,
@@ -27,8 +27,6 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         margin: 5,
-    },
-    goBackButton: {
         backgroundColor: "#1c5c27",
     },
 });
