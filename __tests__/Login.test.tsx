@@ -1,27 +1,52 @@
-import 'react-native';
+
 import React from 'react';
 import LoginScreen from '../src/LoginScreen';
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 
 
 // Note: import explicitly to use the types shiped with jest.
 import {it, test} from '@jest/globals';
-
-// Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-it('renders correctly', () => {
-  renderer.create(<LoginScreen navigation={undefined}/>);
-});
+// Mock AsyncStorage methods
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  setItem: jest.fn(),
+}));
 
-test('Should render the title of the Login screen', () => {
-  const { getByText } = render(<LoginScreen navigation={undefined}/>);
-  const titleText = getByText('LOGIN');
-  expect(titleText).toBeTruthy();
-});
+describe('LoginScreen Component', () => {
 
-test('Should render the Login button text on the screen', () => {
-  const { getByText } = render(<LoginScreen navigation={undefined}/>);
-  const loginButtonText = getByText('Login');
-  expect(loginButtonText).toBeTruthy();
-});
+  test('Renders correctly the Login screen correctly', () => {
+    renderer.create(<LoginScreen navigation={{ navigate: jest.fn() }}/>);
+  });
+
+  test('Should render the title of the Login screen', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }}/>);
+    const titleText = getByText('LOGIN');
+    expect(titleText).toBeTruthy();
+  });
+
+  test('Should render the Login button text on the screen', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }}/>);
+    const loginButtonText = getByText('Login');
+    expect(loginButtonText).toBeTruthy();
+  });
+
+  test('Should render the Login button text on the screen', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }}/>);
+    const forgotPasswordButtonText = getByText('Forgot Password');
+    expect(forgotPasswordButtonText).toBeTruthy();
+  });
+
+  test('Should render the forgot password button text on the screen', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }}/>);
+    const forgotPasswordButtonText = getByText('Forgot Password');
+    expect(forgotPasswordButtonText).toBeTruthy();
+  });
+
+  test('Should render the placeholder text for the login and forgot password input fields', () => {
+    const { getByPlaceholderText } = render(<LoginScreen navigation={{ navigate: jest.fn() }} />);
+    expect(getByPlaceholderText('Username')).toBeTruthy();
+    expect(getByPlaceholderText('Password')).toBeTruthy();
+  });
+
+})
