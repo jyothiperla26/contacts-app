@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Text,
     View,
@@ -8,7 +8,6 @@ import {
     FlatList,
 } from 'react-native';
 import {styles} from './styles/HomeScreenStyles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Contacts from 'react-native-contacts';
 import { request, PERMISSIONS} from 'react-native-permissions';
 import { useUserData } from './useUserData';
