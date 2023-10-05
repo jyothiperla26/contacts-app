@@ -8,6 +8,7 @@ import {
     Platform,
     FlatList,
 } from 'react-native';
+import {styles} from './styles/HomeScreenStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Contacts from 'react-native-contacts';
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
@@ -59,7 +60,7 @@ function HomeScreen({ navigation }: { navigation: any }) {
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
                 <Text style={styles.title}>Welcome {username}</Text>
                 <View
-                    style={[styles.btnElement, styles.loginButton]}>
+                    style={styles.getContactsButton}>
                     <Button
                         title='Get contacts'
                         onPress={()=>{
@@ -91,61 +92,5 @@ function HomeScreen({ navigation }: { navigation: any }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    contactsContainer:{
-        backgroundColor: '#54384c',
-        margin:15,
-        borderRadius:10,
-        width:'90%',
-    },
-    eachContact: {
-        flex: 1,
-        flexDirection: 'column',
-        padding: 15,
-        alignItems: 'center',
-        borderRadius: 10,
-        margin:15,
-        backgroundColor: '#c7ede9',
-        width:'90%',
-      },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    image: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%',
-    },
-    title: {
-        fontWeight: "bold",
-        fontSize: 50,
-        color: "white",
-        marginBottom: 40,
-    },
-    accessButton: {
-        fontWeight: "bold",
-        fontSize: 30,
-        marginBottom: 20,
-        marginRadius: 25,
-    },
-    btnElement: {
-        color: 'white',
-        borderRadius: 25,
-        height: 50,
-        width: 150,
-        alignItems: "center",
-        justifyContent: "center",
-        margin: 5,
-    },
-    loginButton: {
-        backgroundColor: "#1c5c27",
-    },
-
-});
 
 export default HomeScreen;
