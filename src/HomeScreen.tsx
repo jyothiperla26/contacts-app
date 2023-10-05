@@ -71,12 +71,20 @@ function HomeScreen({ navigation }: { navigation: any }) {
                     ></Button>
                 </View>
                 <FlatList
+                style={styles.contactsContainer}
                 keyExtractor={item => item.recordID}
                 data={contacts}
                 renderItem={({item})=>{
                     return (
-                        <View>
-                            <Text>{`${item.givenName}`}</Text>
+                        <View style={styles.eachContact}>
+                            <View>
+                                <Text>{`${item.givenName}`} {item.familyName}</Text>
+                            </View>
+                            <View>
+                                {item.phoneNumbers.map((phone: {number: string | number })=>(
+                                    <Text>{phone.number}</Text>
+                                ))}
+                            </View>
                         </View>
                     )
                 }}/>
@@ -86,6 +94,22 @@ function HomeScreen({ navigation }: { navigation: any }) {
 }
 
 const styles = StyleSheet.create({
+    contactsContainer:{
+        backgroundColor: '#54384c',
+        margin:15,
+        borderRadius:10,
+        width:'90%',
+    },
+    eachContact: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 15,
+        alignItems: 'center',
+        borderRadius: 10,
+        margin:15,
+        backgroundColor: '#c7ede9',
+        width:'90%',
+      },
     container: {
         flex: 1,
         alignItems: 'center',
