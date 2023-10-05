@@ -19,3 +19,9 @@ test('Should render the title of the Home Screen', () => {
   const titleText = getByText('Welcome');
   expect(titleText).toBeTruthy();
 });
+
+test('Should render the Get contacts button text on the screen', () => {
+  const { getByText } = render(<HomeScreen navigation={undefined}/>);
+  const getContactsText = getByText('Login');
+  expect(getContactsText).toBeTruthy();
+});
