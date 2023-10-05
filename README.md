@@ -14,7 +14,7 @@
 
 * This is a Contacts Application. It has three screens, Login Screen, Home Screen, and Forgot Password Screen. Here, you can login into the app, and allow contacts permission and you can see your contacts list if the pwermission is granted. If you forget your password, you can click on the forgot password button.
 
-# Demo of the Movies App
+# Demo of the Contacts App
 
 # Features
 Implemented the following functionality:
