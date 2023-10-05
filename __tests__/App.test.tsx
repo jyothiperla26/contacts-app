@@ -18,7 +18,6 @@ jest.mock('react-native-contacts', () => ({
   getAll: jest.fn(),
 }));
 
-const elementMock = { addEventListener: jest.fn() };
 
 it('renders correctly', () => {
   renderer.create(<App />);

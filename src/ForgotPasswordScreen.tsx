@@ -17,7 +17,7 @@ function ForgotPasswordScreen({ navigation }: { navigation: any }) {
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
                 <Text style={styles.title}>Under construction</Text>
                 <View
-                    style={[styles.btnElement, styles.goBackButton]}>
+                    style={styles.goBackButton}>
                     <Button 
                         title='Go back'
                         onPress={() =>

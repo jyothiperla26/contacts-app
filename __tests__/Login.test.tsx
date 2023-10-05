@@ -54,5 +54,4 @@ describe('LoginScreen', () => {
     const forgotPasswordButton = getByText('Forgot Password');
     fireEvent.press(forgotPasswordButton);
   })
-
 })
