@@ -19,19 +19,24 @@ function HomeScreen({ navigation }: { navigation: any }) {
     const [contacts, setContacts] = useState<any | null>(null);
 
     const askForPermissions = async (permission: any) =>{
-        await request(permission).then(result =>{
-            if (result === 'granted') {
-                Contacts.getAll()
-                .then((contacts) => {
-                    setContacts( contacts );
-                })
-                .catch((e) => {
-                    console.warn("Permission to access contacts was denied");
-                });
-            } else {
-                console.warn('Contacts permission denied');
-            }
-        })
+        try{
+            await request(permission).then(result =>{
+                if (result === 'granted') {
+                    Contacts.getAll()
+                    .then((contacts) => {
+                        setContacts( contacts );
+                    })
+                    .catch((e) => {
+                        console.warn("Permission to access contacts was denied");
+                    });
+                } else {
+                    console.warn('Contacts permission denied');
+                }
+            })
+        }
+        catch(error){
+            console.log(error);
+        }
     }
 
     return (

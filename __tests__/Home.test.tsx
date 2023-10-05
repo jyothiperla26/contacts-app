@@ -5,7 +5,13 @@ import { render, fireEvent} from '@testing-library/react-native';
 
 import {it, test} from '@jest/globals';
 import renderer from 'react-test-renderer';
-
+jest. mock('react-native-permissions', () => require('react-native-permissions/mock'), ); 
+jest.mock('@react-native-async-storage/async-storage', () =>
+  require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
+);
+jest.mock('react-native-contacts', () => ({
+  getAll: jest.fn(),
+}));
 
 
 describe('Home screen Component', () => {
@@ -27,9 +33,9 @@ describe('Home screen Component', () => {
   });
 
   test('handles Get contacts button', () => {
-    const { getByText } = render(<HomeScreen navigation={{}} />);
+    const { getByText } = render(<HomeScreen navigation={jest.fn()} />);
     const getContactsButton = getByText('Get contacts');
     fireEvent.press(getContactsButton);
   });
-  
+
 });
