@@ -53,7 +53,12 @@ describe('LoginScreen Component', () => {
     const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }} />);
     const loginButton = getByText('Login');
     fireEvent.press(loginButton);
+  })
 
-})
+  test('Should handle the forgot password button correctly', () => {
+    const { getByText } = render(<LoginScreen navigation={{ navigate: jest.fn() }} />);
+    const forgotPasswordButton = getByText('Forgot Password');
+    fireEvent.press(forgotPasswordButton);
+  })
 
 })
