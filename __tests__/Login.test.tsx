@@ -54,4 +54,16 @@ describe('LoginScreen', () => {
     const forgotPasswordButton = getByText('Forgot Password');
     fireEvent.press(forgotPasswordButton);
   })
+
+  test('Should apply the value when changing the input text', () => {
+    const { getByPlaceholderText } = render(<LoginScreen navigation={{navigate:jest.fn()}}/>);
+    const usernameInput = getByPlaceholderText('Username');
+    const passwordInput = getByPlaceholderText('Password');
+    fireEvent.changeText(usernameInput, 'Jyothi');
+    fireEvent.changeText(passwordInput, 'Jyo123');
+    expect(usernameInput.props.value).toBe('Jyothi');
+    expect(passwordInput.props.value).toBe('Jyo123');
+
+  });
+
 })
