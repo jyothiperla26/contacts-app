@@ -28,13 +28,13 @@ function LoginScreen({ navigation }: { navigation: any }) {
 
   const handleLogin = () => {
     storeData();
-    if(username!=null){
-      navigation.navigate('Home');
+    if(username!=''){
+      navigation.replace('Home');
     }
   };
 
-
   return (
+  
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <Text style={styles.title}>LOGIN</Text>
